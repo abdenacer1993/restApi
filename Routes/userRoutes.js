@@ -42,7 +42,7 @@ router.put("/:id", async (req, res) => {
     if (userEdited.modifiedCount) {
       return res.send({ msg: "user updated", newUser });
     }
-    res.status(400).send("user updated");
+    res.status(400).send("user already updated");
   } catch (error) {
     
     res.status(400).send(error.message);
@@ -56,7 +56,7 @@ router.delete("/:id", async (req, res) => {
     if (userDelete.deletedCount) {
       return res.send({ msg: "User deleted" });
     }
-    res.status(400).send("user removed");
+    res.status(400).send("user already removed");
   } catch (error) {
     res.status(400).send(error.message);
   }
